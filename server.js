@@ -32,7 +32,6 @@ app.use('/purchase', purchaseRoutes);
 app.use('/premium', premiumRoutes);
 
 app.use((req,res) => {
-    console.log("URL: ",req.url);
     res.sendFile(path.join(__dirname,"public",`${req.url}`));
 });
 
