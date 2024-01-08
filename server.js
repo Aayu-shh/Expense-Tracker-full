@@ -2,7 +2,6 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
 const express = require('express');
-const helmet = require('helmet');
 const path = require('path');
 const dotenv = require('dotenv').config();
 const db = require('./util/database');
@@ -21,22 +20,21 @@ const app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),{flags:'a'});
 app.use(cors());
-app.use(helmet());
+
 app.use(morgan('combined',{stream:accessLogStream}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-app.get('/', (req, res, next) => {
-    //console.log('in Login Page middleware /');
-    console.log(path);
-    res.redirect('/login.html');
-});
 
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 app.use('/password', passwordRoutes);
 app.use('/purchase', purchaseRoutes);
 app.use('/premium', premiumRoutes);
+
+app.use((req,res) => {
+    console.log("URL: ",req.url);
+    res.sendFile(path.join(__dirname,"public",`${req.url}`));
+});
 
 User.hasMany(Expense);
 Expense.belongsTo(User);
