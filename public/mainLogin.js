@@ -10,7 +10,7 @@ myForm.addEventListener('submit', (e) => {
     }
 
 
-    axios.post('http://54.147.239.24:2000/user/login', (existingUserObj))
+    axios.post('http://localhost:2000/user/login', (existingUserObj))
         .then(resObj => {
             console.log(resObj.data);
             if (resObj.data.success) {

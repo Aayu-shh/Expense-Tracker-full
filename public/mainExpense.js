@@ -21,7 +21,7 @@ const isPremium = localStorage.getItem("isPremium");
 //     otherOpt.replaceChild(textInput);
 // })
 
-const backendApi = 'http://54.147.239.24:2000';
+const backendApi = 'http://localhost:2000';
 myForm.addEventListener('submit', async e => {
     e.preventDefault();
     const expObj = { Amount: amount.value, Description: desc.value, Category: category.value };
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async e => {
                 },
                 handler: async paymentRes => {         //Callback if Payment is Success
 
-                    const paid = await axios.post("http://54.147.239.24:2000/purchase/payment", {
+                    const paid = await axios.post("http://localhost:2000/purchase/payment", {
                         order_id: options.order_id,
                         payment_id: paymentRes.razorpay_payment_id
                     }, { headers: { "Authorization": token } });

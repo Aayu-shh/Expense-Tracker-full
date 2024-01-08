@@ -13,7 +13,7 @@ myForm.addEventListener('submit', async (e) => {
     console.log(newUserObj);
 
     try {
-        const resObj = await axios.post('http://54.147.239.24:2000/user/signup', (newUserObj))
+        const resObj = await axios.post('http://localhost:2000/user/signup', (newUserObj))
 
         if (resObj.data.name != 'SequelizeUniqueConstraintError')
             window.alert('Your signup was Success')
