@@ -17,9 +17,8 @@ const premiumRoutes = require('./routes/premium');
 const passwordRoutes = require('./routes/password');
 const morgan = require('morgan');
 const app = express();
-
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),{flags:'a'});
 app.use(cors());
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),{flags:'a'});
 
 app.use(morgan('combined',{stream:accessLogStream}));
 app.use(bodyParser.urlencoded({ extended: true }));

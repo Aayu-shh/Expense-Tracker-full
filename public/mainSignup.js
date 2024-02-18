@@ -16,8 +16,14 @@ myForm.addEventListener('submit', async (e) => {
         const resObj = await axios.post('http://localhost:2000/user/signup', (newUserObj))
 
         if (resObj.data.name != 'SequelizeUniqueConstraintError')
-            window.alert('Your signup was Success')
-        window.location.href = 'login.html';            //navigate to Login Page
+        {
+            window.alert('Your signup was Success');
+            window.location.href = 'login.html';            //navigate to Login Page if successful signup
+        }
+        else{
+            console.log(resObj);
+            window.alert('User already there in DB!! Try logging in, OR Forgot Password options');
+        }
     }
     catch (err) {
         console.log(err);
