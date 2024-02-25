@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async e => {
                 },
                 handler: async paymentRes => {         //Callback if Payment is Success
 
-                    const paid = await axios.post("http://localhost:2000/purchase/payment", {
+                    const paid = await axios.post(`${backendApi}/purchase/payment`, {
                         order_id: options.order_id,
                         payment_id: paymentRes.razorpay_payment_id
                     }, { headers: { "Authorization": token } });

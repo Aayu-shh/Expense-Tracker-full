@@ -2,6 +2,7 @@ const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const myForm = document.querySelector('#myform')
+const backendApi = 'http://localhost:2000'
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -13,7 +14,7 @@ myForm.addEventListener('submit', async (e) => {
     console.log(newUserObj);
 
     try {
-        const resObj = await axios.post('http://localhost:2000/user/signup', (newUserObj))
+        const resObj = await axios.post(`${backendApi}/user/signup`, (newUserObj))
 
         if (resObj.data.name != 'SequelizeUniqueConstraintError')
         {

@@ -2,6 +2,7 @@ const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const myForm = document.querySelector('#myform')
 const myDiv = document.querySelector('#myDiv');
+const backendApi = 'http://localhost:2000'
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const existingUserObj = {
@@ -10,7 +11,7 @@ myForm.addEventListener('submit', (e) => {
     }
 
 
-    axios.post('http://localhost:2000/user/login', (existingUserObj))
+    axios.post(`${backendApi}/user/login`, (existingUserObj))
         .then(resObj => {
             console.log(resObj.data);
             if (resObj.data.success) {
