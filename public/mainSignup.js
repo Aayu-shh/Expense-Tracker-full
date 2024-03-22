@@ -2,7 +2,7 @@ const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const myForm = document.querySelector('#myform')
-const backendApi = 'http://localhost:2000'
+const backendApi = 'http://3.89.234.201:2000'
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();

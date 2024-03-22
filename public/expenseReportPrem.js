@@ -1,7 +1,7 @@
 const dailyTableBody = document.getElementById('dailyBody');
 const weeklyTableBody = document.getElementById('weeklyBody');
 const monthlyTableBody = document.getElementById('monthlyBody');
-const backendApi = 'http://localhost:2000';
+const backendApi = 'http://3.89.234.201:2000';
 
 document.getElementById("dailyTableDiv").classList = "";
 document.getElementById("weeklyTableDiv").classList = "displayNone";
