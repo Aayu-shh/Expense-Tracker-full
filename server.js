@@ -34,7 +34,7 @@ app.use('/premium', premiumRoutes);
 
 app.use((req,res) => {
     console.log('URL :: ',req.url);
-    console.log('Req was Sucess');
+    console.log('Req Reached server, and is almost complete! :)');
     res.sendFile(path.join(__dirname,"public",`${req.url}`));
 });
 
