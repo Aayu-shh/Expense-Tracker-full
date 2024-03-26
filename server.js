@@ -20,6 +20,7 @@ const morgan = require('morgan');
 const app = express();
 app.use(cors({credentials:true,origin:'*'}));
 
+//Test push --Remove
 //const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),{flags:'a'});
 
 //app.use(morgan('combined',{stream:accessLogStream}));
