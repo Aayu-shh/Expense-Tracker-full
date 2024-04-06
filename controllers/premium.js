@@ -26,7 +26,7 @@ exports.getLeaderBoard = async (req, res) => {
                     attributes: [],
                 },
             ],
-            group: ['User.id'], // Group by userId to calculate total expenses per user
+            group: ['user.id'], // Group by userId to calculate total expenses per user
             order: [[Sequelize.literal('totalExpenses'), 'DESC']] // Order by total expenses in descending order
         })
         return res.status(200).send(users);
