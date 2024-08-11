@@ -12,7 +12,7 @@ const sender = {
     name: 'Chhattisgarh Tractors'
 }
 
-exports.forgot = async (req, res) => {
+exports.forgotPass = async (req, res) => {
     const newUuid4 = uuid.v4();
     const myUser = await User.findOne({ where: { email: req.body.email } });
     const recievers = [
@@ -30,7 +30,7 @@ exports.forgot = async (req, res) => {
     res.status(200).send({success:true, message: 'Reset password email sent sucessfully' });
 }
 
-exports.reset = async (req, res) => {
+exports.resetPass = async (req, res) => {
     try{
     const reqUuid = req.params.uuid;
     if (uuid.validate(reqUuid)) {
@@ -60,7 +60,7 @@ exports.reset = async (req, res) => {
     }
 }
 
-exports.update = async (req, res) => {
+exports.updatePass = async (req, res) => {
     try {
         const newPass = req.body.pass;
         const requuid = req.params.uuid;
