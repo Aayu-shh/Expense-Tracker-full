@@ -25,7 +25,7 @@ exports.forgotPass = async (req, res) => {
         to: recievers,
         subject: "Reset Password link from Aayush's Expense tracker app",
         htmlContent: `<p> Hi {{params.email1}}, click on the below link to reset your password<p>
-                    <h2><a href="http://localhost:3000/password/reset/${newUuid4}">Reset Password</a></h2>`, params: { email1: req.body.email }
+                    <h2><a href="http://44.211.163.102:3000/password/reset/${newUuid4}">Reset Password</a></h2>`, params: { email1: req.body.email }
     })
     const newfgr = await ForgotPasswordRequest.create({ id: newUuid4, isActive: true, userId: myUser.id });
     res.status(200).send({success:true, message: 'Reset password email sent sucessfully' });

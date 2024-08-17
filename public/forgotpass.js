@@ -1,7 +1,7 @@
 
 document.addEventListener('submit', async (e) => {
     console.log();
-    const backendApi = 'http://localhost:3000';
+    const backendApi = 'http://44.211.163.102:3000';
 
     try {
         e.preventDefault();
