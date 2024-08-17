@@ -21,7 +21,7 @@ const isPremium = localStorage.getItem("isPremium");
 //     otherOpt.replaceChild(textInput);
 // })
 
-const backendApi = 'http://44.211.163.102:3000';
+const backendApi = 'http://52.73.239.207';
 myForm.addEventListener('submit', async e => {
     e.preventDefault();
     const expObj = { Amount: amount.value, Description: desc.value, Category: category.value };
