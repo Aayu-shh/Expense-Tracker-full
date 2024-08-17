@@ -2,7 +2,7 @@ const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const myForm = document.querySelector('#myform')
 const myDiv = document.querySelector('#myDiv');
-const backendApi = 'http://44.211.163.102:3000'
+const backendApi = 'http://localhost:3000'
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const existingUserObj = {
