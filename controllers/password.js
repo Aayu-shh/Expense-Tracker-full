@@ -82,7 +82,7 @@ exports.updatePass = async (req, res) => {
                  })
         }
         else{
-            res.status(200).send({success:"failure", message:"Reset Password link invalid"});
+            res.status(200).send({success:"failure", message:"Reset Password link INVALID!!"});
         }
     }
     catch (err) {
