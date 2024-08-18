@@ -48,7 +48,7 @@ exports.resetPass = async (req, res) => {
                     <title>Reset Password Page</title>
                 </head>
                     <body>
-                        <form action="/password/updatepassword/${reqUuid}" method="POST">
+                        <form action="/password/update/${reqUuid}" method="POST">
                             <label for="pass">Enter new password:</label>
                             <input type="password" id="pass" name="pass">
                             <input type="submit" value="Update Password">
@@ -77,12 +77,12 @@ exports.updatePass = async (req, res) => {
             const encrypass = await bcrypt.hash(newPass, 10);
             myUser.update({ Password: encrypass })
                 .then(() => {
-                    res.redirect('/');
+                    res.redirect('/login.html');
                     //res.send({ status: 'sucess', message: 'password updated sucessfully' })
                  })
         }
         else{
-            res.status(200).send({success:"failure", message:"Reset Password link invalid"});     //Re check what statusCd to set
+            res.status(200).send({success:"failure", message:"Reset Password link invalid"});
         }
     }
     catch (err) {
