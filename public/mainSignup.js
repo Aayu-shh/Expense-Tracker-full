@@ -22,10 +22,14 @@ myForm.addEventListener('submit', async (e) => {
             window.location.href = 'login.html'; // Navigate to Login Page if successful signup
         } else {
             console.log(resObj);
-            myDiv.textContent = 'User already exists in the database! Try logging in, or use Forgot Password options.';
+            myDiv.textContent = 'User already exists! Try LogIn OR ForgotPassword';
             myDiv.classList.remove("hidden", "yellowText");
             myDiv.classList.add("redText");
             myDiv.style.display = 'block';
+            setTimeout(() => {
+                myDiv.innerHTML = '';
+                myDiv.classList.add('hidden')
+            }, 5000);
         }
     } catch (err) {
         console.log(err);
@@ -33,11 +37,19 @@ myForm.addEventListener('submit', async (e) => {
         myDiv.classList.remove("hidden", "redText", "yellowText"); // Reset classes
 
         if (err.response && err.response.status === 400) {
-            myDiv.textContent = 'Invalid input! Please check your details and try again.';
+            myDiv.textContent = 'Invalid input! Please Try again.';
             myDiv.classList.add("redText");
+            setTimeout(() => {
+                myDiv.innerHTML = '';
+                myDiv.classList.add('hidden')
+            }, 5000);
         } else {
             myDiv.textContent = 'Something went wrong. Please try again later.';
             myDiv.classList.add("yellowText");
+            setTimeout(() => {
+                myDiv.innerHTML = '';
+                myDiv.classList.add('hidden')
+            }, 5000);
         }
 
         myDiv.style.display = 'block';
