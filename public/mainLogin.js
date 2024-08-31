@@ -22,15 +22,17 @@ myForm.addEventListener('submit', (e) => {
             }
         })
         .catch(err => {
-            myDiv.innerHTML = " ";
-            console.log(err);
+            myDiv.innerHTML = "";  // Clear previous messages
+            myDiv.classList.remove("hidden", "redText", "yellowText");  // Reset classes
+
             if (err.response.status == 401) {
-                myDiv.append(document.createTextNode(err.response.data));
+                myDiv.textContent = err.response.data;  // Set error message
                 myDiv.classList.add("redText");
-            }
-            else {
-                myDiv.append(document.createTextNode(err.response.data));
+            } else {
+                myDiv.textContent = err.response.data;  // Set error message
                 myDiv.classList.add("yellowText");
             }
+
+            myDiv.style.display = 'block';
         });
-});
+    })

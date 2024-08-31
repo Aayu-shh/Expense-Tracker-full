@@ -47,11 +47,11 @@ exports.login = async (req, res) => {
                 return res.json({ success: true, redirect: 'expensePage.html', token: tokenGenerator(users[0].id, users[0].Name, users[0].isPremiumUser), premium: users[0].isPremiumUser });
             }
             else {
-                res.status(401).send('Wrong password entered, User NOT Authorized !');
+                res.status(401).send('Wrong password, Unauthorized!');
             }
         }
         else {
-            res.status(404).send('User NOT Found in Database!')
+            res.status(404).send('User NOT Found. Please Signup!')
         }
     }
     catch (err) {

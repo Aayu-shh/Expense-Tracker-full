@@ -1,8 +1,9 @@
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
-const myForm = document.querySelector('#myform')
-const backendApi = 'http://localhost:3000'
+const myForm = document.querySelector('#myform');
+const myDiv = document.getElementById('myDiv'); // Reference to error message div
+const backendApi = 'http://localhost:3000';
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -14,19 +15,31 @@ myForm.addEventListener('submit', async (e) => {
     console.log(newUserObj);
 
     try {
-        const resObj = await axios.post(`${backendApi}/user/signup`, (newUserObj))
+        const resObj = await axios.post(`${backendApi}/user/signup`, newUserObj);
 
-        if (resObj.data.name != 'SequelizeUniqueConstraintError')
-        {
-            window.alert('Your signup was Success');
-            window.location.href = 'login.html';            //navigate to Login Page if successful signup
-        }
-        else{
+        if (resObj.data.name !== 'SequelizeUniqueConstraintError') {
+            window.alert('Your signup was successful!');
+            window.location.href = 'login.html'; // Navigate to Login Page if successful signup
+        } else {
             console.log(resObj);
-            window.alert('User already there in DB!! Try logging in, OR Forgot Password options');
+            myDiv.textContent = 'User already exists in the database! Try logging in, or use Forgot Password options.';
+            myDiv.classList.remove("hidden", "yellowText");
+            myDiv.classList.add("redText"); 
+            myDiv.style.display = 'block';
         }
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err);
+        myDiv.innerHTML = ''; // Clear previous messages
+        myDiv.classList.remove("hidden", "redText", "yellowText"); // Reset classes
+
+        if (err.response && err.response.status === 400) {
+            myDiv.textContent = 'Invalid input! Please check your details and try again.';
+            myDiv.classList.add("redText");
+        } else {
+            myDiv.textContent = 'Something went wrong. Please try again later.';
+            myDiv.classList.add("yellowText");
+        }
+
+        myDiv.style.display = 'block';
     }
 });
