@@ -5,14 +5,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 
-function tokenGenerator(id,name,premium){ 
+function tokenGenerator(id, name, premium) {
     const payload = {
-        userId:id,
-        name:name,
-        isPremium:premium
+        userId: id,
+        name: name,
+        isPremium: premium
     }
     const token = jwt.sign(payload, process.env.TOKEN_SECRET);
-    return(token);
+    return (token);
 }
 
 exports.signup = async (req, res) => {
@@ -47,16 +47,15 @@ exports.login = async (req, res) => {
                 return res.json({ success: true, redirect: 'expensePage.html', token: tokenGenerator(users[0].id, users[0].Name, users[0].isPremiumUser), premium: users[0].isPremiumUser });
             }
             else {
-                res.status(401).send('Wrong password entered, User NOT Authorized !');
+                res.status(401).send('Wrong password, Unauthorized!');
             }
         }
         else {
-            res.status(404).send('User NOT Found in Database!')
+            res.status(404).send('User NOT Found. Please Signup!')
         }
     }
     catch (err) {
         console.log(err);
     }
 }
-
 
