@@ -53,7 +53,7 @@ exports.downloadReport = async (req, res) => {
         const expenses = await UserServices.getExpenses(req);
         const stringifiedExp = JSON.stringify(expenses);
         const userID = req.user.id;
-        const fileName = `Expenses${userID}/${new Date()}.txt`;
+        const fileName = `ExpensesLOCAL${userID}/${new Date()}.txt`;
         const fileURL = await S3Services.uploadToS3(stringifiedExp, fileName);
         const downloadedReportsTableInsert = await req.user.createReport({ url: fileURL });
         res.status(200).send({ fileURL, createdAt: downloadedReportsTableInsert.createdAt, sucess: true });

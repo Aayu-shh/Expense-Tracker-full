@@ -27,6 +27,11 @@ app.use(cors({credentials:true,origin:'*'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    //send login page if user lands on HOME
+    res.sendFile(path.join(__dirname, "public", "login.html"))
+})
+
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 app.use('/password', passwordRoutes);
