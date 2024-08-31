@@ -64,13 +64,11 @@ label {
     color: #555;
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+/* Input Field Specific Styling */
+input[type="text"],
+input[type="email"] {
+    margin-bottom: 15px;
+    /* Space below the input field */
 }
 
 /* Button Style */
