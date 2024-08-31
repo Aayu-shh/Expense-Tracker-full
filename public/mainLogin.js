@@ -28,11 +28,18 @@ myForm.addEventListener('submit', (e) => {
             if (err.response.status == 401) {
                 myDiv.textContent = err.response.data;  // Set error message
                 myDiv.classList.add("redText");
+                setTimeout(()=> {
+                    myDiv.innerHTML='';
+                    myDiv.classList.add('hidden')
+                }, 5000);
             } else {
                 myDiv.textContent = err.response.data;  // Set error message
                 myDiv.classList.add("yellowText");
+                setTimeout(() => { 
+                    myDiv.innerHTML = '';
+                    myDiv.classList.add('hidden');
+                }, 5000);
             }
-
             myDiv.style.display = 'block';
         });
     })
