@@ -93,6 +93,11 @@ document.addEventListener('DOMContentLoaded', async e => {
         }
         ldrBrdBtn.onclick = e => {
             e.preventDefault();
+            //clear leaderBoard (if exists)
+            while (ldrdiv.firstChild) {
+                ldrdiv.removeChild(ldrdiv.firstChild);
+            }
+            //create LeaderBoard
             const ldrHeading = document.createElement('h1');
             ldrHeading.innerHTML = '<b>Leaderboard</b>';
             ldrdiv.appendChild(ldrHeading);
