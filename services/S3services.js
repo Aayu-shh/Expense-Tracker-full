@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 exports.uploadToS3 = (data, fileName) => {
-    const BUCKET_NAME = 'expensetrackerapp2';
+    const BUCKET_NAME = 'expensetrackerapp28';
     //Initialize bucket
     let s3bucket = new AWS.S3({
         accessKeyId: process.env.IAM_USER_KEY,
