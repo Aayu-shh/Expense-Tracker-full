@@ -56,7 +56,7 @@ exports.downloadReport = async (req, res) => {
             expenseCSV += expense.id + "," + expense.Amount + "," + expense.Description + "," + expense.Category + "," + expense.createdAt + "\n"
         });
         const userID = req.user.id;
-        const fileName = `ExpensesLOCAL${userID}/${new Date()}.csv`;
+        const fileName = `Expenses${userID}/${new Date()}.csv`;
         const fileURL = await S3Services.uploadToS3(stringifiedExp, fileName);
         const downloadedReportsTableInsert = await req.user.createReport({ url: fileURL });
         res.status(200).send({ fileURL, createdAt: downloadedReportsTableInsert.createdAt, sucess: true });
