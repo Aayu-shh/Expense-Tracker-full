@@ -51,10 +51,13 @@ exports.getReports = async (req, res) => {
 exports.downloadReport = async (req, res) => {
     try {
         const expenses = await UserServices.getExpenses(req);
-        const stringifiedExp = JSON.stringify(expenses);
+        let expenseCSV = "ExpenseId,Amount,Description,Category,Date\n";
+        expenses.forEach(expense => {
+            expenseCSV +=expense.id+","+expense.Amount+","+expense.Description+","+expense.Category+","+expense.createdAt+"\n"
+        });
         const userID = req.user.id;
-        const fileName = `ExpensesLOCAL${userID}/${new Date()}.txt`;
-        const fileURL = await S3Services.uploadToS3(stringifiedExp, fileName);
+        const fileName = `ExpensesLOCAL${userID}/${new Date()}.csv`;
+        const fileURL = await S3Services.uploadToS3(expenseCSV, fileName);
         const downloadedReportsTableInsert = await req.user.createReport({ url: fileURL });
         res.status(200).send({ fileURL, createdAt: downloadedReportsTableInsert.createdAt, sucess: true });
     }
