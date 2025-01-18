@@ -1,0 +1,202 @@
+/* General Container Style */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Form Section Style */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-section input,
+.form-section select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-section input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-section input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Button Styles */
+.buttons-section button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Existing styles from styles.css applied here for consistency */
+/* ------------------------------------------------------------------------------------------ */
+/* Add Expense Button Style */
+/* General button styling for consistency */
+.addExpBtn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth transitions for hover and active states */
+}
+
+/* Default button styles */
+.addExpBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+.addExpBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Add Expense button specific styling */
+#myExpForm .addExpBtn {
+    background-color: #28a745;
+    /* Green color for Add Expense button */
+    color: white;
+    border: 2px solid #218838;
+    /* Darker green border */
+    font-size: 18px;
+    /* Slightly larger text for emphasis */
+    padding: 8px 24px;
+    /* Adjust padding for a more substantial look */
+    margin-top: 12px;
+    margin-bottom: 15px;
+    width: auto;
+}
+
+#myExpForm .addExpBtn:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+    border-color: #1e7e34;
+    /* Even darker green border on hover */
+}
+
+#myExpForm .addExpBtn:active {
+    background-color: #1e7e34;
+    /* Darker green when button is clicked */
+    transform: scale(0.98);
+    /* Slightly shrink the button on click */
+}
+/* ---------------------------- Add Exp ENDs */
+/* Expenses List Styles */
+.expenses-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.expenses-list li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenses-list li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.expenses-list li button:hover {
+    background-color: #c82333;
+}
+
+/* Pagination Styles */
+.pagination-section button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Leaderboard and Download Styles */
+.leaderboard-section,
+.download-section {
+    margin-top: 30px;
+}
+
+.leaderboard-section ul,
+.download-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.leaderboard-section li,
+.download-section li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download-section li button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.download-section li button:hover {
+    background-color: #218838;
+}

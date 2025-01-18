@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Expenses</title>
+    <link rel="stylesheet" href="styles/expenseStyles.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Form Section -->
+        <section class="form-section">
+            <h2>Add New Expense</h2>
+            <form action="/" id="myExpForm" class="expense-form">
+                <div class="form-group">
+                    <label for="amt">Amount:</label>
+                    <input type="number" name="amount" id="amt" required>
+                </div>
+                <div class="form-group">
+                    <label for="desc">Description:</label>
+                    <input type="text" name="description" id="desc" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select name="cat" id="category">
+                        <option>Food</option>
+                        <option>Petrol</option>
+                        <option>Movie</option>
+                        <option>Bill Payment</option>
+                        <option>Income</option>
+                        <option id="otherOpt">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="addExpBtn">ADD</button>
+            </form>
+        </section>
+
+        <!-- Buttons Section -->
+        <section class="buttons-section">
+            <button id="rzp-button1" class="btn">Buy Premium</button>
+            <button id="ldrbrd" class="btn">Show Leaderboard</button>
+            <button id="dwnld" class="btn">Download</button>
+            <button id="report" class="btn">See Expense Report</button>
+        </section>
+
+        <!-- Expenses List Section -->
+        <section class="expenses-section">
+            <h2>Expenses</h2>
+            <ul id="elist" class="expenses-list">
+                <!-- Expenses will be dynamically added here -->
+            </ul>
+        </section>
+
+        <!-- Pagination Section -->
+        <section class="pagination-section">
+            <div id="expPrPgDiv" class="pagination-controls">
+                <label for="expensesPerPage">Number of expenses per page:</label>
+                <select name="expensesPerPage" id="expPrPg">
+                    <option>10</option>
+                    <option>5</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+            </div>
+            <div id="pageNumDiv" class="pagination-buttons"></div>
+        </section>
+
+        <!-- Leaderboard & Download Sections -->
+        <section id="ldrdiv" class="leaderboard-section">
+            <!-- Leaderboard content will be dynamically added here -->
+        </section>
+
+        <section id="dwnlddiv" class="download-section">
+            <h2>Download List</h2>
+            <ul id="reportList">
+                <!-- Downloaded reports will be dynamically added here -->
+            </ul>
+        </section>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="mainExpense.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
