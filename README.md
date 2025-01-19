@@ -2,7 +2,7 @@
 
 The application is deployed on my AWS EC2 instance and can be accessed from ->(Login HERE) http://52.73.239.207/
 
-This is a Backend Expense Tracker App that allows you to track your expenses and manage your finances.
+This is an Expense Tracker App that allows you to track your expenses and manage your finances.
 
 ## Features
 - SignUp and Login to your account to have all your data saved.
