@@ -1,4 +1,5 @@
 # Expense-Tracker-App
+HIT http://52.73.239.207/ to LOGIN
 
 ##Clone Git repo
 
