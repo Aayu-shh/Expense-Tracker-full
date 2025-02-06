@@ -21,7 +21,7 @@ const isPremium = localStorage.getItem("isPremium");
 //     otherOpt.replaceChild(textInput);
 // })
 
-const backendApi = 'http://52.73.239.207';
+const backendApi = 'https://trackmyexpense.site';
 myForm.addEventListener('submit', async e => {
     e.preventDefault();
     const expObj = { Amount: amount.value, Description: desc.value, Category: category.value };

@@ -3,7 +3,7 @@ const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const myForm = document.querySelector('#myform');
 const myDiv = document.getElementById('myDiv'); // Reference to error message div
-const backendApi = 'http://52.73.239.207';
+const backendApi = 'https://trackmyexpense.site';
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();

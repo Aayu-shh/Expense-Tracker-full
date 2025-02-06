@@ -2,7 +2,7 @@ const email = document.querySelector('#email');
 const pass = document.querySelector('#pass');
 const myForm = document.querySelector('#myform')
 const myDiv = document.querySelector('#myDiv');
-const backendApi = 'http://52.73.239.207';
+const backendApi = 'https://trackmyexpense.site';
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const existingUserObj = {

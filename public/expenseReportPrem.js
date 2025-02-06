@@ -1,7 +1,7 @@
 const dailyTableBody = document.getElementById('dailyBody');
 const weeklyTableBody = document.getElementById('weeklyBody');
 const monthlyTableBody = document.getElementById('monthlyBody');
-const backendApi = 'http://52.73.239.207';
+const backendApi = 'https://trackmyexpense.site';
 
 document.getElementById("dailyTableDiv").classList = "";
 document.getElementById("weeklyTableDiv").classList = "displayNone";
