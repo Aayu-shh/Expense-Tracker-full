@@ -1,6 +1,6 @@
 # Expense-Tracker-full
 
-The application is deployed on my AWS EC2 instance and can be accessed from ->(Login HERE) [https://52.73.239.207/](https://trackmyexpense.site/)
+The application is deployed on my AWS EC2 instance and can be accessed from ->(Login HERE) [trackMyExpense](https://trackmyexpense.site/)
 
 This is an Expense Tracker App that allows you to track your expenses and manage your finances.
 
