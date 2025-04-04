@@ -1,10 +1,4 @@
-Okay, let's brighten up your README, make it more professional, and add some relevant emojis!
-
-Here's a revised version:
-
----
-
-# 💰 Expense Tracker Pro 📊
+# 💰 Expense Tracker App 📊
 
 **🚀 Live Demo:** Access the deployed application on AWS EC2 -> [**trackmyexpense.site**](https://trackmyexpense.site/) 🚀
 
